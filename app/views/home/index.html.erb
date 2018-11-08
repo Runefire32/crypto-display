@@ -1,0 +1,18 @@
+<form action="/">
+  <select name="currency">
+     <% @allinfo.each do |name, value| %>
+      <option><%= name %></option>
+    <% end %>
+  </select>
+  <br><br>
+  <input type="submit">
+</form>
+
+<% if params[:currency].nil? %>
+<% else %>
+<br>
+<p> La valeur de cette cryptomonnaie est: </p>
+<p>  <%= @allinfo["#{@currency}"] %> </p>
+
+
+<% end %>
